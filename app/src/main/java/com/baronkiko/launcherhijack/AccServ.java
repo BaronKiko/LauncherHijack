@@ -11,7 +11,7 @@ public class AccServ extends AccessibilityService {
 
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
-        if(event.getPackageName().equals("com.amazon.firelauncher"))
+        if(event.getPackageName().equals("com.amazon.firelauncher") || event.getPackageName().equals("com.amazon.tv.launcher"))
             HomePress.Perform(getApplicationContext());
     }
 
@@ -31,7 +31,10 @@ public class AccServ extends AccessibilityService {
         info.flags = AccessibilityServiceInfo.DEFAULT;
         info.eventTypes = AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED;
         info.feedbackType = AccessibilityServiceInfo.FEEDBACK_GENERIC;
-        info.packageNames = new String[]{"com.amazon.firelauncher"};
+/* FireOS 5
+ *      info.packageNames = new String[]{"com.amazon.firelauncher"};
+ * FireOS 8 */
+        info.packageNames = new String[]{"com.amazon.tv.launcher"};
         setServiceInfo(info);
         HomePress.Perform(getApplicationContext());
     }
