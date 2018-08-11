@@ -102,6 +102,8 @@ public class MainActivity extends AppCompatActivity {
         String adbCommand3 = "# adb shell";
         String adbCommand4 = "# pm grant com.baronkiko.launcherhijack android.permission.SYSTEM_ALERT";
         String adbCommand4Part2 = "    _WINDOW";
+        String adbCommand5 = "# settings put secure enabled_accessibility_services com.baronkiko.laun";
+        String adbCommand5Part2 = "    cherhijack/com.baronkiko.launcherhijack.AccServ";
 
         AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
         alertDialog.setTitle("FireTV Permissions Notice");
@@ -109,28 +111,40 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout alertContents = new LinearLayout(this);
         LinearLayout.LayoutParams lllp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
-        TextView alertHeader = new TextView(this);
         TextView alertMessage = new TextView(this);
-        TextView alertMessageExtraLine = new TextView(this);
+        TextView alertCommands1 = new TextView(this);
+        TextView alertCommands1ExtraLine = new TextView(this);
+        TextView alertCommands2 = new TextView(this);
+        TextView alertCommands2ExtraLine = new TextView(this);
 
-        alertHeader.setText(welcomeMessage + " " + welcomeMessage2 + "\n");
-        alertHeader.setGravity(Gravity.CENTER_HORIZONTAL);
-        alertHeader.setTextColor(Color.WHITE);
-
-        alertMessage.setText(adbCommand1 + "\n" + adbCommand2 + "\n" + adbCommand3 + "\n" + adbCommand4);
-        alertMessage.setGravity(Gravity.LEFT);
+        alertMessage.setText(welcomeMessage + " " + welcomeMessage2 + "\n");
+        alertMessage.setGravity(Gravity.CENTER_HORIZONTAL);
         alertMessage.setTextColor(Color.WHITE);
 
-        alertMessageExtraLine.setText(adbCommand4Part2);
-        alertMessageExtraLine.setGravity(Gravity.LEFT);
-        alertMessageExtraLine.setTextColor(Color.WHITE);
+        alertCommands1.setText(adbCommand1 + "\n" + adbCommand2 + "\n" + adbCommand3 + "\n" + adbCommand4);
+        alertCommands1.setGravity(Gravity.LEFT);
+        alertCommands1.setTextColor(Color.WHITE);
+
+        alertCommands1ExtraLine.setText(adbCommand4Part2);
+        alertCommands1ExtraLine.setGravity(Gravity.LEFT);
+        alertCommands1ExtraLine.setTextColor(Color.WHITE);
+
+        alertCommands2.setText(adbCommand5);
+        alertCommands2.setGravity(Gravity.LEFT);
+        alertCommands2.setTextColor(Color.WHITE);
+
+        alertCommands2ExtraLine.setText(adbCommand5Part2);
+        alertCommands2ExtraLine.setGravity(Gravity.LEFT);
+        alertCommands2ExtraLine.setTextColor(Color.WHITE);
 
         alertContents.setLayoutParams(lllp);
         alertContents.setOrientation(LinearLayout.VERTICAL);
         alertContents.removeAllViews();
-        alertContents.addView(alertHeader);
         alertContents.addView(alertMessage);
-        alertContents.addView(alertMessageExtraLine);
+        alertContents.addView(alertCommands1);
+        alertContents.addView(alertCommands1ExtraLine);
+        alertContents.addView(alertCommands2);
+        alertContents.addView(alertCommands2ExtraLine);
 
         alertDialog.setView(alertContents);
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
