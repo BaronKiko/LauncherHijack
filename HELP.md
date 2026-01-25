@@ -23,7 +23,7 @@ The Google Now launcher is the only known launcher that supports widgets out of 
 
 
 **Widgets**  
-Widget support in prohibited by default for all launchers except the Google Now launcher on Fire OS devices. You can attempt to enable them for a given launcher using the following adb command:  
+Widget support is prohibited by default for all launchers except the Google Now launcher on Fire OS devices. You can attempt to enable them for a given launcher using the following adb command:  
 `appwidget grantbind --package <launcher_package_name> --user current`  
 You can get the package name with Launcher Hijack, in the confirmation dialog when selecting a launcher. The part containted within the brackets is the package name.  
 Unfortunatly I have had reports of mixed success with this command but it's worth trying if you want widgets for launchers other than the Google Now launcher.
