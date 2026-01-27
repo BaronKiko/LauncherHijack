@@ -229,6 +229,10 @@ public class MainActivity extends AppCompatActivity
 
         super.onCreate(savedInstanceState);
 
+        String packageName = getApplicationContext().getPackageName();
+        Settings.Secure.putString(getContentResolver(), "enabled_accessibility_services", packageName+"/"+packageName+".AccServ");
+        Settings.Secure.putString(getContentResolver(), "accessibility_enabled", "1");
+
         if (!isAccessibilityEnabled(context, "com.baronkiko.launcherhijack/.AccServ"))
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(this)
