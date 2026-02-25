@@ -1,6 +1,6 @@
 # Fire Tablets
 **Installation**  
-1. Natigate to this GitHub's downloads page (https://github.com/BaronKiko/LauncherHijack/releases) on your tablet and download the latest APK
+1. Navigate to this GitHub's downloads page (https://github.com/BaronKiko/LauncherHijack/releases) on your tablet and download the latest APK
 2. Open your newly downloaded file and install like any other Android application
 3. Open settings and navigate to "Accessibility -> To detect home button press" and press enable
 4. If Launcher Hijack didn't open, find and open it
@@ -9,7 +9,7 @@
 7. Congratulation, if all is working correctly your home button should now open your chosen launcher
 
 **Updates (Specifically 5.6.2.0)**  
-Please disable LauncherHijack in accessibility settings during Fire OS updates. LauncherHijack causes issues during update 5.6.2.0, you wont brick your device or anything with it left enabled but you wont be able to complete update 5.6.2.0 until disabled. There is nothing I can do without degrading the application during regular use. If you somehow end up mid update with LauncherHijack enabled the easiest solution, assuming you can't get to settings, is to uninstall LauncherHijack through ADB (plenty of guides online) and reinstall it after you complete the update.
+Please disable LauncherHijack in accessibility settings during Fire OS updates. LauncherHijack causes issues during update 5.6.2.0, you won't brick your device or anything with it left enabled but you won't be able to complete update 5.6.2.0 until disabled. There is nothing I can do without degrading the application during regular use. If you somehow end up mid update with LauncherHijack enabled the easiest solution, assuming you can't get to settings, is to uninstall LauncherHijack through ADB (plenty of guides online) and reinstall it after you complete the update.
 
 **Google Now Launcher**  
 The Google Now launcher is the only known launcher that supports widgets out of the box. It can however be a pain to set up so try following these instructions:
@@ -25,13 +25,13 @@ The Google Now launcher is the only known launcher that supports widgets out of 
 **Widgets**  
 Widget support in prohibited by default for all launchers except the Google Now launcher on Fire OS devices. You can attempt to enable them for a given launcher using the following adb command:  
 `appwidget grantbind --package <launcher_package_name> --user current`  
-You can get the package name with Launcher Hijack, in the confirmation dialog when selecting a launcher. The part containted within the brackets is the package name.  
-Unfortunatly I have had reports of mixed success with this command but it's worth trying if you want widgets for launchers other than the Google Now launcher.
+You can get the package name with Launcher Hijack, in the confirmation dialog when selecting a launcher. The part contained within the brackets is the package name.  
+Unfortunately I have had reports of mixed success with this command but it's worth trying if you want widgets for launchers other than the Google Now launcher.
 
 
-**Disable the Dafault Launcher**  
+**Disable the Default Launcher**  
 If you are annoyed by the default launcher appearing while your chosen launcher is loading then you can corrupt the default launcher.  
-Fair **WARNING** if you do this without any 3rd party launchers installed you will have a very hard time fixing your device and once the Fire Launcher is broken it can never be fixed for that user account, you will have to make a new user account to ressurect it.
+Fair **WARNING** if you do this without any 3rd party launchers installed you will have a very hard time fixing your device and once the Fire Launcher is broken it can never be fixed for that user account, you will have to make a new user account to resurrect it.
 1. Download the corrupted launcher found in the attached files of this [XDA post](https://forum.xda-developers.com/amazon-fire/general/tut-easily-remove-amazons-firelauncher-t3467758). You will need an XDA account to download the file.
 2. Install it using the following command `adb install -r -d <path to downloaded file>`
 3. Reboot
@@ -40,7 +40,7 @@ Fair **WARNING** if you do this without any 3rd party launchers installed you wi
 If you are having issues then there are some common issues you can check here:
 - Ensure you are using an Amazon device running Fire OS, compatible with all versions as of release (6.3 = latest)
 - Ensure home button detection is enabled: "Settings -> Accessibility -> To detect home button press"
-- If Launcher Hijack keeps saying "Accessibilty Service Disabled" when opened despite "Settings -> Accessibility -> To detect home button press" being set to on:
+- If Launcher Hijack keeps saying "Accessibility Service Disabled" when opened despite "Settings -> Accessibility -> To detect home button press" being set to on:
   1. Go to "Settings -> Apps & Games -> Manage All Applications -> Launcher Hijack"
   2. Press menu
   3. Select "Uninstall for all users" then OK
@@ -48,7 +48,7 @@ If you are having issues then there are some common issues you can check here:
   5. Wait 5 seconds
   6. Boot
   7. Start at instillation step 1
-- Ensure you can open your launcher directly i.e. Using any launcher, other than your chosen launcher, and open you chosen launcher like any other app, this should open your chosen launcher. CAVIAT: This does NOT work for the google now launcher and any launcher that requires default; When opening a launcher like this you will be redirected to the fire os system settings so that you can set your default launcher which is not possible, hence why this app was created
+- Ensure you can open your launcher directly i.e. Using any launcher, other than your chosen launcher, and open you chosen launcher like any other app, this should open your chosen launcher. CAVEAT: This does NOT work for the google now launcher and any launcher that requires default; When opening a launcher like this you will be redirected to the fire os system settings so that you can set your default launcher which is not possible, hence why this app was created
 - Ensure you have selected your chosen launcher in Launcher Hijack
 - Reboot your device after following all previous steps
 - After clicking home initially wait 10 seconds and press home again. This happens when your chosen launchers process gets killed in the background and may happen from time to time, especially after a reboot. There are plenty of existing apps that already keep a chosen application in memory so try one of those if this is a reoccurring issue for you.
@@ -57,7 +57,7 @@ If you are having issues then there are some common issues you can check here:
 
 # Fire TV's
 **Installation**  
-1. Natigate to this GitHub's downloads page (https://github.com/BaronKiko/LauncherHijack/releases) on your desktop/laptop and download the latest APK
+1. Navigate to this GitHub's downloads page (https://github.com/BaronKiko/LauncherHijack/releases) on your desktop/laptop and download the latest APK
 2. Install ADB on your desktop/laptop (Google will help you) and ensure a connection to your Fire TV.
 3. Install Launcher Hijack with this command  
 `adb install <path to downloaded APK>`
@@ -71,7 +71,7 @@ If you are having issues then there are some common issues you can check here:
 9. Congratulation, if all is working correctly your home button should now open your chosen launcher
 
 **Important, Accessing Settings and the Long Press Menu**  
-Unfortunatly for FireTV devices a comprimise had to be made. To access the long press menu and with it settings you have to hold menu and home together. You can also get to the default launcher by simply pressing them together.
+Unfortunately for FireTV devices a compromise had to be made. To access the long press menu and with it settings you have to hold menu and home together. You can also get to the default launcher by simply pressing them together.
 
 **Troubleshooting**  
 If you are having issues then there are some common issues you can check here:
