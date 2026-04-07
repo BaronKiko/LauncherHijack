@@ -5,13 +5,23 @@ android {
     buildToolsVersion '28.0.3'
 
     defaultConfig {
-        applicationId "com.baronkiko.launcherhijack"
+        applicationId "com.gitxpresso.launcherhijack"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 43
-        versionName "4.0.3"
+        versionCode 44
+        versionName "4.0.4"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+  
+    lintOptions {
+        abortOnError false
+    }
+   
     buildTypes {
         release {
             minifyEnabled false
@@ -21,7 +31,7 @@ android {
 }
 
 dependencies {
-implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support:appcompat-v7:28.0.0'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

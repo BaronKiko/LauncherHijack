@@ -1,4 +1,4 @@
-package com.baronkiko.launcherhijack;
+package com.gitxpresso.launcherhijack;
 
 public interface OnHomePressedListener {
     public void onHomePressed();

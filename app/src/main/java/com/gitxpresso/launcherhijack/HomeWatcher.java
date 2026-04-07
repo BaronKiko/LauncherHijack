@@ -4,7 +4,7 @@
 
 
 
-package com.baronkiko.launcherhijack;
+package com.gitxpresso.launcherhijack;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
